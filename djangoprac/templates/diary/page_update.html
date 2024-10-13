@@ -1,0 +1,12 @@
+{% extends "base/diary_base.html" %}
+{% block body %}
+
+<form method="POST" enctype="multipart/form-data">
+    <!-- CSRF検証（脆弱性検証）を自動で行う -->
+    {% csrf_token %}
+    <!-- 自動で入力項目を生成 -->
+    {{ form.as_p }}
+    <button type="submit">更新</button>
+</form>
+
+{% endblock %}

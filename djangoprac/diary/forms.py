@@ -6,4 +6,4 @@ class PageForm(ModelForm):
     class Meta:
         model = Page
         # フィールドにユーザが入力する項目を指定
-        fields = ["title", "body", "page_date"]
+        fields = ["title", "body", "page_date", "picture"]

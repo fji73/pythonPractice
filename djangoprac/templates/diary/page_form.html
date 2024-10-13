@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charaset="UTF-8">
-        <title>日記</title>
-    </head>
-    <body>
-        <h2>日記を書く</h2>
-        <form method="POST">
-            <!-- CSRF検証（脆弱性検証）を自動で行う -->
-            {% csrf_token %}
-            <!-- 自動で入力項目を生成 -->
-            {{ form.as_p }}
-            <button type="submit">保存</button>
-        </form>
-    </body>
-</html>
+{% extends "base/diary_base.html" %}
+{% block body %}
+<h2>日記を書く</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <!-- CSRF検証（脆弱性検証）を自動で行う -->
+        {% csrf_token %}
+        <!-- 自動で入力項目を生成 -->
+        {{ form.as_p }}
+        <button type="submit">保存</button>
+    </form>
+{% endblock %}
